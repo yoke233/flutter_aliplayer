@@ -558,7 +558,7 @@ class FlutterAliplayer {
       case "onInfo":
         if (onInfo != null) {
           int infoCode = event['infoCode'];
-          int extraValue = event['extraValue'];
+          int extraValue = event['extraValue']??0;
           String extraMsg = event['extraMsg'] ?? '';
           onInfo!(infoCode, extraValue, extraMsg, playerId);
         }
@@ -566,8 +566,8 @@ class FlutterAliplayer {
       case "onError":
         if (onError != null) {
           int errorCode = event['errorCode'];
-          String errorExtra = event['errorExtra'];
-          String errorMsg = event['errorMsg'];
+          String errorExtra = event['errorExtra']?? '';
+          String errorMsg = event['errorMsg']?? '';
           onError!(errorCode, errorExtra, errorMsg, playerId);
         }
         break;

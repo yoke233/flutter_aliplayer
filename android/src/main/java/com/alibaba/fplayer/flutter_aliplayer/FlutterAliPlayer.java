@@ -268,7 +268,7 @@ public class FlutterAliPlayer {
             }
         });
 
-        player.setOnSubtitleDisplayListener(new IPlayer.OnSubtitleDisplayListener() {
+        /*player.setOnSubtitleDisplayListener(new IPlayer.OnSubtitleDisplayListener() {
             @Override
             public void onSubtitleExtAdded(int trackIndex, String url) {
                 Map<String,Object> map = new HashMap<>();
@@ -308,7 +308,7 @@ public class FlutterAliPlayer {
                     mFlutterAliPlayerListener.onSubtitleHide(map);
                 }
             }
-        });
+        });*/
 
         player.setOnInfoListener(new IPlayer.OnInfoListener() {
             @Override

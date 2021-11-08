@@ -35,6 +35,10 @@
     NSString *str = [NSString stringWithUTF8String:data.bytes];
     NSLog(@"SEI: %@", str);
 }
+- (void)onVideoSizeChanged:(AliPlayer*)player width:(int)width height:(int)height rotation:(int)rotation {
+    self.eventSink(@{kAliPlayerMethod:@"onVideoSizeChanged",@"width":@(width),@"height":@(height),@"rotation":@(rotation),kAliPlayerId:_playerId});
+    NSLog(@"onVideoSizeChanged: %@", @{kAliPlayerMethod:@"onVideoSizeChanged",@"width":@(width),@"height":@(height),@"rotation":@(rotation),kAliPlayerId:_playerId});
+}
 
 /**
  @brief 播放器事件回调
