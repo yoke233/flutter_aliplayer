@@ -108,7 +108,8 @@ class _PlayerPageState extends State<PlayerPage> with WidgetsBindingObserver {
   }
 
     ///设置播放源
-  void onViewPlayerCreated() async {
+  void onViewPlayerCreated(int viewId) async {
+    fAliplayer.setPlayerView(viewId);
     switch (_playMode) {
       case ModeType.URL:
         this.fAliplayer.setUrl(_dataSourceMap[DataSourceRelated.URL_KEY]);
@@ -134,6 +135,8 @@ class _PlayerPageState extends State<PlayerPage> with WidgetsBindingObserver {
         break;
       default:
     }
+    fAliplayer.setAutoPlay(true);
+    fAliplayer.prepare();
   }
 }
 ```
